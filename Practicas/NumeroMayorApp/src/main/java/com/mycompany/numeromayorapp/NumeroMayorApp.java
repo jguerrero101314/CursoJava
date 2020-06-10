@@ -24,9 +24,9 @@ public class NumeroMayorApp {
         int numero2 = sc.nextInt();
         
         if( numero1 > numero2)
-            System.out.println("El numero mayor es: " + numero1);
+            System.out.println("El numero 1 es mayor " );
         else if( numero2 > numero1)
-            System.out.println("El numero mayor es: " + numero2);
+            System.out.println("El numero 2 es mayor " );
         else
             System.out.println("Los dos numeros son iguales");
         
