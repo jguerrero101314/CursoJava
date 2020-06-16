@@ -2,6 +2,8 @@
 import java.lang.Math;
 
 public class EcuacionSegundoGrado {
+    
+ 
 
     public void ecuacion(int a, int b, int c) {
 
