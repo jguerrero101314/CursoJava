@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Formulario de Usuarios</title>
+        <link rel="stylesheet" type="text/css" href="estilos.css">
+        <script type="text/javascript" src="funciones.js"></script>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>
+                    <a href="http://globalmentoring.com.mx" target="_blank"><img src="logo-global-mentoring.png" alt="Imagen GM"></a>
+                </td>
+                <td>
+                    <h1>Formulario de Usuarios</h1>
+                </td>
+                <td>
+                    <a href="http://universidadjava.com" target="_blank"><img src="logo-universidad-java.png" alt="Imagen UJ"></a>
+                </td>
+            </tr>
+        </table>
+        <form name="form1" method="post" onsubmit=" return validarForma(this);">
+            <table>
+                <tr>
+                    <td>Nombre:</td>
+                    <td><input type="text" name="nombre" onfocus="this.select();" ></td>
+                </tr>
+                <tr>
+                    <td>Apellido:</td>
+                    <td><input type="text" name="apellido" onfocus="this.select();"></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="text" name="email" onfocus="this.select();"></td>
+                <tr>
+                    <td align="right"> &nbsp;</td>
+                    <td align="left"> 
+                        <button name="reiniciar" type="reset" class="boton">Reiniciar</button>
+                        &nbsp;
+                        <button name="enviar" value="enviar" type="submit" class="boton">Enviar</button></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
