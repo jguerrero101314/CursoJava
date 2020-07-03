@@ -1,0 +1,7 @@
+domain\Persona.class
+datos\UsuarioJDBC.class
+ManejoPersonas.class
+ManejoUsuarios.class
+datos\ConexionBD.class
+domain\Usuario.class
+datos\PersonaJDBC.class
