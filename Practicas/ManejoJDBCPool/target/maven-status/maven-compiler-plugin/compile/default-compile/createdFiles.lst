@@ -1,0 +1,10 @@
+domain\PersonaDTO.class
+ManejoPersonas.class
+ManejoUsuarios.class
+datos\ConexionBD.class
+datos\UsuarioDaoJDBC.class
+datos\PersonaDao.class
+datos\UsuarioDao.class
+datos\PersonaDaoJDBC.class
+domain\UsuarioDTO.class
+.netbeans_automatic_build
