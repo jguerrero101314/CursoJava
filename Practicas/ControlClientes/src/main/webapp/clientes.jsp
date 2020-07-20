@@ -12,6 +12,9 @@
     <body>
         <!-- Cabecero -->
         <jsp:include page="WEB-INF/paginas/comunes/cabecero.jsp" />
+
+        <!-- Botones de navegacion -->     
+        <jsp:include page="WEB-INF/paginas/comunes/botonesNavegacion.jsp" />
         <ul>
             <c:forEach var="cliente" items="${clientes}">
                 <li>${cliente.idCliente} ${cliente.nombre} ${cliente.apellido} ${cliente.saldo}</li>
