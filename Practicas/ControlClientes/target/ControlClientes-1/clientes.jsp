@@ -10,7 +10,8 @@
         <title>Control de clientes</title>
     </head>
     <body>
-        <h1>Control de clientes</h1>
+        <!-- Cabecero -->
+        <jsp:include page="WEB-INF/paginas/comunes/cabecero.jsp" />
         <ul>
             <c:forEach var="cliente" items="${clientes}">
                 <li>${cliente.idCliente} ${cliente.nombre} ${cliente.apellido} ${cliente.saldo}</li>
