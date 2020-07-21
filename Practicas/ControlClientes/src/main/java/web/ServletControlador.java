@@ -10,14 +10,23 @@ import javax.servlet.http.*;
 
 @WebServlet("/ServletControlador")
 public class ServletControlador extends HttpServlet {
-    
-   @Override
-   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
-       List<Cliente> clientes = new ClienteDaoJDBC().listar();
-       System.out.println("clientes = " + clientes);
-       req.setAttribute("clientes", clientes);
-       req.getRequestDispatcher("clientes.jsp").forward(req, resp);
-       
-   }
-    
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        List<Cliente> clientes = new ClienteDaoJDBC().listar();
+        System.out.println("clientes = " + clientes);
+        req.setAttribute("clientes", clientes);
+        req.setAttribute("totalClientes", clientes.size());
+        req.setAttribute("saldoTotal", this.calcularSaldoTotal(clientes));
+        req.getRequestDispatcher("clientes.jsp").forward(req, resp);
+
+    }
+    private double calcularSaldoTotal(List<Cliente> clientes){
+        double saldoTotal = 0;
+        for(Cliente cliente: clientes){
+            saldoTotal += cliente.getSaldo();
+        }
+        return saldoTotal;
+    }
+
 }
