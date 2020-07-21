@@ -15,11 +15,9 @@
 
         <!-- Botones de navegacion -->     
         <jsp:include page="WEB-INF/paginas/comunes/botonesNavegacion.jsp" />
-        <ul>
-            <c:forEach var="cliente" items="${clientes}">
-                <li>${cliente.idCliente} ${cliente.nombre} ${cliente.apellido} ${cliente.saldo}</li>
-                </c:forEach>
-        </ul>
+
+        <!-- Listado Clientes -->     
+        <jsp:include page="WEB-INF/paginas/cliente/listadoClientes.jsp" />
 
         <!-- footer -->     
         <jsp:include page="WEB-INF/paginas/comunes/footer.jsp" />
