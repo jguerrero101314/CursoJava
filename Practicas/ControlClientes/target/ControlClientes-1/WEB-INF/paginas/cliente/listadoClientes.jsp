@@ -23,9 +23,9 @@
                         </thead>
                         <tbody>
                             <!-- Iteramos cada elemento de la lista de clientes  -->
-                            <c:forEach var="cliente" items="${clientes}">
+                            <c:forEach var="cliente" items="${clientes}" varStatus="status">
                                 <tr>
-                                    <td>${cliente.idCliente}</td> 
+                                    <td>${status.count}</td> 
                                     <td>${cliente.nombre} ${cliente.apellido}</td>
                                     <td>${cliente.email}</td> 
                                     <td>${cliente.telefono}</td> 
