@@ -13,7 +13,19 @@ public class ServletControlador extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        String accion = req.getParameter("accion");
+        if (accion != null) {
+            switch (accion) {
+                case "editar":
+                    this.editarCliente(req, resp);
+                    break;
+                default:
+                    this.accionDefault(req, resp);
+            }
+        } else {
             this.accionDefault(req, resp);
+        }
     }
 
     private void accionDefault(HttpServletRequest req, HttpServletResponse resp)
@@ -50,8 +62,7 @@ public class ServletControlador extends HttpServlet {
                     this.accionDefault(req, resp);
 
             }
-        }
-        else{
+        } else {
             this.accionDefault(req, resp);
         }
     }
@@ -65,7 +76,7 @@ public class ServletControlador extends HttpServlet {
         String telefono = req.getParameter("telefono");
         double saldo = 0;
         String SaldoString = req.getParameter("saldo");
-        if(SaldoString != null && !"".equals(SaldoString)){
+        if (SaldoString != null && !"".equals(SaldoString)) {
             saldo = Double.parseDouble(SaldoString);
         }
         // creamos el objeto de cliente (modelo)
@@ -75,6 +86,18 @@ public class ServletControlador extends HttpServlet {
         System.out.println("registrosModificados = " + registrosModificados);
         // redirigimos hacia la accion por default
         this.accionDefault(req, resp);
+    }
+
+    private void editarCliente(HttpServletRequest req, HttpServletResponse resp)
+        throws ServletException, IOException{
+        
+        //recuperamos el idCliente
+        int idCliente = Integer.parseInt(req.getParameter("idCliente"));
+        Cliente cliente = new ClienteDaoJDBC().encontrar(new Cliente(idCliente));
+        req.setAttribute("cliente", cliente);
+        String jspEditar = "/WEB_INF/paginas/cliente/editarCliente.jps";
+        req.getRequestDispatcher(jspEditar).forward(req, resp);
+        
     }
 
 }
