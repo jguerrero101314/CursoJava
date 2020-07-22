@@ -10,7 +10,14 @@
                 <button type="submit" class="btn btn-success btn-block">
                     <i class="fas fa-check"></i> Guardar Cliente
                 </button>
+            </div> 
+            <div class="col-md-3">
+                <a class="btn btn-danger btn-block" href="${pageContext.request.contextPath}/ServletControlador?accion=eliminar&idCliente=${cliente.idCliente}">
+                    <i  class="fas fa-trash"></i> Eliminar Cliente
+                </a>
+
             </div>
+
         </div>
     </div>
 </section>
